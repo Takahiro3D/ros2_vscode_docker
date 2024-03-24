@@ -28,7 +28,7 @@
         "ROS_DOMAIN_ID": "42"
     },
     "runArgs": [
-        "--net=host",
+        "${if eq (env:CODESPACES 'true') '' '--net=host'}",
         "-e", "DISPLAY=${env:DISPLAY}"
     ],
     "mounts": [
